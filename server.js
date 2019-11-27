@@ -16,8 +16,15 @@ app.get('/store', function(req, res){
 	res.send('To jest sklep');
 });
 
-app.get('views/first-template', function(req, res){
+app.get('/first-template', function(req, res){
 	res.render('first-template');
+});
+
+app.get('/dynamic-view', function(req, res){
+	res.render('dynamic', {
+		name: "Moja dynamiczna strona",
+		url: "http://www.google.com"
+	});
 });
 
 app.listen(3000);
